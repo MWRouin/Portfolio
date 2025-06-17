@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MWR</title>
+  <link rel="stylesheet" href="styleGen.css">
+</head>
+<body>
+
+  <header>
+    <h1>Mohamed Wissem Rouin</h1>
+    <p>Software Engineer | Back End Developer</p>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- In the future -->
+        <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate software engineer with experience in building web and backend systems. I'm currently seeking opportunities to grow in a challenging and international environment.
+      </p>
+    </section>
+
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <article>
+        <h3>Back End Engineer – Intelligencia IT & Financial Solutions</h3>
+        <p><strong>Location:</strong> Tunis, Tunisia</p>
+        <p><strong>Dates:</strong> October 2023 - Present</p>
+        <p>
+          – Developed and maintained RESTful APIs for a digital platform facilitating public offerings, improving bond and share issuance, subscription, and allocation processes for investors and market participants.<br/>
+– Assisted in designing scalable microservices using Domain-Driven Design (DDD) and Clean Architecture in ASP.NET Core,
+ensuring long-term system maintainability and modular development.<br/>
+– Helped optimizing system performance through CQRS, Redis caching, and Materialized-Views, significantly improving data
+retrieval speed and query efficiency.<br/>
+– Led the implementation of the server infrastructure and CI/CD pipelines using GitLab, Docker, and Proxmox.<br/>
+• <strong>Technologies:</strong> GitLab-CI, Docker, ASP.NET Core, EF-Core, MediatR, Redis, PostgreSQL, Tolgee, Proxmox, Dotnet Identity.<br/>
+        </p>
+      </article>
+      <!-- Repeat for other jobs -->
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article>
+        <h3>Engineering Degree in ICT – National Engineering School of Sousse</h3>
+        <p><strong>Location:</strong> Sousse, Tunisia</p>
+        <p><strong>Dates:</strong> 2020 – 2023</p>
+        <p>
+          Development of robust backend software for an Autonomous Mobile Robot (AMR), emphasizing the implementation of low-level motor control algorithms (Field-Oriented Control) using C/C++ for precise torque and speed management. Designed and developed a ROS2-based API to streamline centralized control, data retrieval, and server interactions. Integrated sensor fusion with wheel odometry, IMU, LiDAR, and ultrasonic sensors to enhance navigation accuracy. Contributed to autonomous navigation algorithms, leveraging software engineering expertise in C/C++, ROS2, and system optimization for scalable and efficient robotic system performance.
+        </p>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="mailto:med.wissem.rouine@gmail.com">Email</a></li>
+        <li><a href="https://tn.linkedin.com/in/wissem-rouin" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/MWRouin" target="_blank">GitHub</a></li>
+      </ul>
+      
+      <form id="contactForm">
+        <label for="name">Your Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">Your Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+        
+        <label for="subject">Subject:</label><br />
+        <input type="text" id="subject" name="subject" required /><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="6" required></textarea><br /><br />
+
+        <button type="submit">Send Message</button>
+      </form>
+
+    </section>
+    
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // prevent real form submission
+
+      const name = encodeURIComponent(document.getElementById("name").value);
+      const email = encodeURIComponent(document.getElementById("email").value);
+      const subject = encodeURIComponent(document.getElementById("subject").value);
+      const message = encodeURIComponent(document.getElementById("message").value);
+
+      const expandedSubject = `MWR%20Portfolio%20|%20From:%20${name}%20|%20Subject:%20${subject}`;
+
+      const body = `${message}%0A%0ASender's%20Infos:%0A--%20Name:%20${name}%0A--%20Email:%20${email}`;
+
+      window.location.href = `mailto:med.wissem.rouine@gmail.com?subject=${expandedSubject}&body=${body}`;
+    });
+  </script>
+
+  </main>
+
+</body>
